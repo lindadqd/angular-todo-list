@@ -1,10 +1,10 @@
-<form #form="ngForm" (ngSubmit)="submit(); form.resetForm()">
-  <input
-    type="text"
-    placeholder="todo: clean room"
-    name="todo"
-    [(ngModel)]="todo"
-    required
-  />
-  <button>Create</button>
-</form>
+<div>
+    <h2>Add a task</h2>
+<form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <div>
+            <label for="title">Title: </label>
+            <input type="text" id="title" formControlName="title" />
+        </div>
+        <button type="submit">Add task</button>
+    </form>
+</div>
